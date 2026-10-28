@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(tensorrt_test LANGUAGES CXX)
+project(tensorrt_study LANGUAGES CXX)
 
 set(TENSORRT_ROOT
     "${CMAKE_CURRENT_SOURCE_DIR}/TensorRT-11.2.1.2-Windows-amd64-cuda-13.3/TensorRT-11.2.1.2"
@@ -30,13 +30,13 @@ find_library(TENSORRT_ONNX_LIBRARY
     REQUIRED
 )
 
-add_executable(inference_once src/inference_once.cpp src/cv/cv.cpp)
+add_executable(inference_once src/inference_once.cpp src/cv/cv.cpp include/cv/cv.hpp)
 
 target_compile_features(inference_once PRIVATE cxx_std_17)
 target_compile_definitions(inference_once PRIVATE PROJECT_ROOT="${CMAKE_CURRENT_SOURCE_DIR}")
 
 target_include_directories(inference_once PRIVATE
-    "${CMAKE_CURRENT_SOURCE_DIR}/src"
+    "${CMAKE_CURRENT_SOURCE_DIR}/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/externals/stb"
     "${TENSORRT_INCLUDE_DIR}"
 )

@@ -10,10 +10,14 @@ tensorrt_study/
 ├── Makefile
 ├── README.md
 ├── LICENSE
+├── licenses/                  # 외부 라이선스 원문 사본
+├── THIRD_PARTY_NOTICES.md      # 외부 의존성 및 모델 라이선스 안내
+├── include/
+│   └── cv/
+│       └── cv.hpp              # CvImage와 이미지 처리 API
 ├── src/
 │   ├── inference_once.cpp       # 모델 로딩·추론·이미지 입출력
 │   └── cv/
-│       ├── cv.hpp              # CvImage와 이미지 처리 API
 │       └── cv.cpp              # 그리기·텍스트·리사이즈·검출 후처리
 ├── externals/
 │   └── stb/                    # 이미지 입출력·글꼴·리사이즈 헤더
@@ -32,7 +36,7 @@ tensorrt_study/
 └── TensorRT-.../               # 로컬 SDK; 외부 경로로 지정해도 됨
 ```
 
-`models`, `data/inputs`, `data/outputs`, `outputs`, `build`, SDK 및 압축 파일은 `.gitignore`로 제외합니다. 저장소를 새로 받으면 모델·입력 데이터·SDK를 별도로 준비해야 합니다. 로컬 `include/`는 현재 빌드에서 사용하지 않습니다.
+`models`, `data/inputs`, `data/outputs`, `outputs`, `build`, SDK 및 압축 파일은 `.gitignore`로 제외합니다. 저장소를 새로 받으면 모델·입력 데이터·SDK를 별도로 준비해야 합니다. 공개 헤더는 `include/`, 구현 파일은 `src/`, 외부 라이브러리 원본은 `externals/`에 둡니다. CMake는 `include/`를 헤더 검색 경로로 등록하므로 프로젝트 소스에서 `#include "cv/cv.hpp"`로 사용합니다.
 
 ## 준비 환경
 
@@ -200,3 +204,11 @@ python python-scripts/nvidia-dmon.py --demo
 ```
 
 `make monitor`로도 실행할 수 있습니다. Python 3.10 이상이 필요하며, 기록은 메모리에만 유지되고 창을 닫으면 사라집니다. 모니터는 실행 중 자동으로 로그 파일을 저장하지 않습니다.
+
+## 라이선스
+
+직접 작성한 코드에는 [Unlicense](LICENSE)가 적용됩니다. 저장소에 포함된 stb 헤더와 별도 설치하는 라이브러리·SDK, 모델 및 데이터에는 각자의 라이선스가 적용됩니다.
+
+구성 요소별 라이선스와 배포 시 확인할 사항은 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)를 참고하세요. 특히 Ultralytics 기반 모델의 라이선스는 ONNX나 TensorRT 엔진으로 변환해도 별도로 확인해야 하며, 모델의 출처와 적용 조건은 아직 확인되지 않았습니다.
+
+외부 라이선스 원문 사본은 [licenses/](licenses/README.md)에 포함되어 있습니다.

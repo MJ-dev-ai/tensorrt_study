@@ -124,3 +124,6 @@ vcpkg_installed/
 *.dwo
 Testing/
 .cache/
+
+# user docs
+commit_message.md
