@@ -100,3 +100,27 @@ Desktop.ini
 .env.*
 !.env.example
 !.env.template
+
+# Additional patterns from the GitHub C++ template
+*.d
+*.slo
+*.lo
+*.gch
+*.mod
+*.smod
+*.lai
+*.la
+*.out
+*.app
+build/
+Build/
+build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+vcpkg_installed/
+*.dwo
+Testing/
+.cache/
