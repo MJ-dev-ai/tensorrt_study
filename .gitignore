@@ -1,0 +1,102 @@
+# CMake and build directories
+/build/
+/build-*/
+/cmake-build-*/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/CTestTestfile.cmake
+/Testing/
+/install_manifest.txt
+/compile_commands.json
+
+# Compiled binaries, libraries, and debug files
+*.exe
+*.dll
+*.so
+*.so.*
+*.dylib
+*.obj
+*.o
+*.lib
+*.a
+*.exp
+*.pdb
+*.ilk
+*.idb
+*.pch
+*.ipch
+*.tlog
+*.lastbuildstate
+
+# Locally installed TensorRT SDK and its downloaded archives
+*.[zZ][iI][pP]
+/TensorRT-*/
+/TensorRT-*.zip
+/TensorRT-*.tar.gz
+/TensorRT-*.tgz
+
+# Local model weights and generated inference engines
+/models/
+*.engine
+*.plan
+*.onnx
+*.onnx.data
+*.pt
+*.pth
+*.weights
+*.timing.cache
+
+# Local input data and generated results
+/data/inputs/
+/data/outputs/
+/outputs/
+/logs/
+/runs/
+/output.png
+/output_*.png
+/profile_*.json
+/profile_*.log
+*.log
+
+# Python caches, virtual environments, and test output
+# Match cache files and directories at any depth, including future tools.
+*.[cC][aA][cC][hH][eE]
+*.[cC][aA][cC][hH][eE].*
+*[cC][aA][cC][hH][eE]*/
+*.tmp
+*.temp
+*.bak
+*.pid
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Machine-local IDE and OS files
+.vs/
+*.vcxproj.user
+*.suo
+*.user
+*.sln.docstates
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Local environment secrets; keep shareable templates
+.env
+.env.*
+!.env.example
+!.env.template
